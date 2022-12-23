@@ -130,6 +130,17 @@ estimator.fit(X_train, y_train)
 
 #### (6) optuna
 
+```python
+study = optuna.create_study (direction='minimize')
+study.optimize(objective, n_trials=50)
+param = {
+    'loss_function': 'NMAE',
+    'learning_rate': 0.008,
+    'n_estimators': 10000,
+    'max_depth': 17
+}
+xgboost = xgb.XGBRegressor(**param)  
+```
 #### (7) 반올림, 내림 (데이터 후처리)
 
 ```python
