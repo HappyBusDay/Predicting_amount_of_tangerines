@@ -105,6 +105,7 @@ selector = SelectKBest(score_func=f_regression, k=5)
 X_train_selected = selector.fit_transform(X_train, y_train)
 
 selected_names = all_names[selected_mask]
+```
 #### (2) 새로운 column 생성
 
 
