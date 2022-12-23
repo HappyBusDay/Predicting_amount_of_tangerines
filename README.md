@@ -96,9 +96,6 @@ def NMAE(true, pred):
 ### 4. 시도 및 착안 아이디어
 
 #### (1) Correlation 활용 Feature Select
-
-![image](https://user-images.githubusercontent.com/83712521/209253166-dc28bf6a-1ae4-45c3-838c-2b02d6894592.png)
-
 ```python
 from category_encoders import OneHotEncoder
 from sklearn.feature_selection import f_regression, SelectKBest
@@ -108,28 +105,15 @@ selector = SelectKBest(score_func=f_regression, k=5)
 X_train_selected = selector.fit_transform(X_train, y_train)
 
 selected_names = all_names[selected_mask]
-```
-![image](https://user-images.githubusercontent.com/83712521/209252535-a2eec236-1d69-4d0f-bb22-7d94ba7bf23d.png)
-
-
 #### (2) 새로운 column 생성
 
-![image](https://user-images.githubusercontent.com/83712521/209252898-12880366-614b-4dc0-881d-9293c94bc867.png)
- 
 
 
 #### (3) voting regressor
 
-![image](https://user-images.githubusercontent.com/83712521/209252978-cfe2d523-26c4-4479-93b5-f11e9e54bf7c.png)
-
 #### (4) 중간 값 이용 앙상블
 
-![image](https://user-images.githubusercontent.com/83712521/209253032-e1b76b8e-8b4d-4594-b03f-a8e619e5440c.png)
-
-
 #### (5) grid search
-
-![image](https://user-images.githubusercontent.com/83712521/209253115-9402cd20-eb69-4e32-ace9-29f3cd016ba8.png)
 
 ```python
 estimator = RandomForestRegressor()
@@ -145,12 +129,7 @@ estimator.fit(X_train, y_train)
 
 #### (6) optuna
 
-![image](https://user-images.githubusercontent.com/83712521/209253213-dc1f925e-6b27-410c-bf1c-b77c14308347.png)
-
-
 #### (7) 반올림, 내림 (데이터 후처리)
-
-![image](https://user-images.githubusercontent.com/83712521/209253276-27b0bded-0db4-436e-8d23-0d04ddb5331a.png)
 
 ```python
 sample_submission['착과량(int)'].map(lambda x: round(x)) 
