@@ -141,7 +141,7 @@ param = {
 }
 xgboost = xgb.XGBRegressor(**param)  
 ```
-#### (7) 반올림, 내림 (데이터 후처리)
+#### (7) 결과값 반올림&내림 (데이터 후처리)
 
 ```python
 sample_submission['착과량(int)'].map(lambda x: round(x)) 
