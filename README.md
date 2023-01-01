@@ -1,4 +1,4 @@
-### [데이콘] 감귤 착과량 예측 AI 경진대회 
+### [데이콘] 감귤 착과량 예측 AI 경진대회     
 ### Predicting_amount_of_tangerines
 <img src="https://user-images.githubusercontent.com/83712521/209253559-18bc6b5e-57c7-4eb7-9ca0-def609d0626f.png" width="500" height="250">
 
